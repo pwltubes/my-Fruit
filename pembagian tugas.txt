@@ -1,0 +1,40 @@
+tampilan awal (Majid)
+	- konten (Semuahhh)
+		nama
+		gambar
+		harga
+		- detail
+			deskripsi 
+			nama gambar harga
+			jumlah
+			keranjang
+			beli (tombol)
+	- kategori (side menu)
+		buah
+		sayur
+		rempah-rempah
+pembayaran (Mamat + majid)
+	- cek buah
+		nama
+		alamat
+		kontak
+		kurir
+		catatan pemesanan (optional)
+		ringkasan belanja
+		total tagihan
+		
+pengguna (Nita + majid)
+	- (kondisi belum login)
+		masuk
+			- email
+			- kata sandi
+		registrasi
+			- nama lengkap
+			- email
+			- kata sandi
+			- verifikasi kata sandi
+	- (udah login)
+		tentang kita
+		pengaturan
+		keluar
+		ubah profil
