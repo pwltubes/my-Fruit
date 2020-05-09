@@ -1,7 +1,7 @@
 tampilan awal (Majid)
 	- konten (Semuahhh)
 		nama
-		gambar
+		gambar 
 		harga
 		- detail
 			deskripsi 
