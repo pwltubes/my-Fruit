@@ -13,7 +13,11 @@
     "express-handlebars": "^4.0.4",
     "hbs": "^4.1.1",
     "http-errors": "~1.6.3",
+<<<<<<< Updated upstream
     "jquery": "^1.9.1",
+=======
+    "mongodb": "^3.5.7",
+>>>>>>> Stashed changes
     "mongoose": "^5.9.13",
     "morgan": "~1.9.1",
     "react": "^16.13.1",

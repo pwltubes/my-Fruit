@@ -4,6 +4,7 @@
 
 .thumbnail .description {
     color: lightslategray;
+    text-align: justify;
 }
 
 .price {
