@@ -14,14 +14,15 @@ var pembayaranRouter = require('./routes/pembayaran');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost:27017/shopping', {useNewUrlParser: true } );
+mongoose.connect('mongodb://localhost:27017/shopping', { useNewUrlParser: true, useUnifiedTopology: true });
 // mongoose.connect('localhost:27017/shopping');
 // mongoose.connect('localhost:17017/shopping');
 
 // view engine setup
 app.engine('.hbs', expressHbs({
-	defaultLayout: 'layout', 
-	extname:'.hbs'}))
+  defaultLayout: 'layout',
+  extname: '.hbs'
+}))
 app.set('view engine', '.hbs');
 
 app.use(logger('dev'));
@@ -37,12 +38,12 @@ app.use('/pembayaran', pembayaranRouter);
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

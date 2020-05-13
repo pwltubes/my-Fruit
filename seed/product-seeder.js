@@ -1,4 +1,4 @@
-var Products = require('../models/products');
+var Products = require('../models/product');
 
 var products = [
     new Products({
