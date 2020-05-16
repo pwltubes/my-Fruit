@@ -6,16 +6,19 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "@popperjs/core": "^2.4.0",
     "bootstrap": "^4.4.1",
+    "connect-mongo": "^3.2.0",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "express-handlebars": "^4.0.4",
     "hbs": "^4.1.1",
     "http-errors": "~1.6.3",
-    "jquery": "^1.9.1",
+    "jquery": "^3.5.1",
     "mongoose": "^5.9.13",
     "morgan": "~1.9.1",
+    "popper.js": "^1.16.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }

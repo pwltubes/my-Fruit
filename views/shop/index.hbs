@@ -1,24 +1,29 @@
+{{!-- {{# each products }}
+  Product!
+{{/each}} --}}
+
 {{# each products }}
   <div class="row">
-    {{# each this }}
-     <div class="col-sm-6 col-md-4">
-      <div class="thumbnail">
-        <img src="{{ this.imagePath }}" alt="..." class="img-responsive">
-        <div class="caption">
-          <h3>Pisang Cavandish</h3>
-          <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam recusandae sapiente consectetur placeat quia neque, eligendi voluptatem eos culpa impedit quidem nam iusto et inventore omnis magni. Molestiae, deleniti consequatur.</p>
-          <div>
+    {{# each this}}
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img src="{{ this.imagePath}}" alt="..." class="img-responsive">
+          <div class="caption">
+            <h3>Pisang Cavandish</h3>
+            <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam recusandae sapiente consectetur placeat quia neque, eligendi voluptatem eos culpa impedit quidem nam iusto et inventore omnis magni. Molestiae, deleniti consequatur.</p>
+            <div>
               <div class="clearfix">
-                  <div class="price pull-left">Rp10000</div>
-                  <a href="#" class="btn btn-success pull-right" role="button">Button</a>
+                <div class="price pull-left">$10000</div>
+                <a href="/add-to-cart/{{this._id}}" class="btn btn-success pull-right" role="button">Beli</a>
               </div>
+            </div>
           </div>
         </div>
       </div>
-     </div>
-    {{/each}}  
+    {{/each}}
   </div>
 {{/each}}
+
 {{!-- <div class="row">
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
@@ -28,8 +33,8 @@
         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam recusandae sapiente consectetur placeat quia neque, eligendi voluptatem eos culpa impedit quidem nam iusto et inventore omnis magni. Molestiae, deleniti consequatur.</p>
         <div>
             <div class="clearfix">
-                <div class="price pull-left">Rp10000</div>
-                <a href="#" class="btn btn-success pull-right" role="button">Button</a>
+                <div class="price pull-left">$10000</div>
+                <a href="#" class="btn btn-success pull-right" role="button">Beli</a>
             </div>
         </div>
       </div>
@@ -43,8 +48,8 @@
         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam recusandae sapiente consectetur placeat quia neque, eligendi voluptatem eos culpa impedit quidem nam iusto et inventore omnis magni. Molestiae, deleniti consequatur.</p>
         <div>
             <div class="clearfix">
-                <div class="price pull-left">Rp10000</div>
-                <a href="#" class="btn btn-success pull-right" role="button">Button</a>
+                <div class="price pull-left">$10000</div>
+                <a href="#" class="btn btn-success pull-right" role="Beli">Button</a>
             </div>
         </div>
       </div>
@@ -58,7 +63,7 @@
         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam recusandae sapiente consectetur placeat quia neque, eligendi voluptatem eos culpa impedit quidem nam iusto et inventore omnis magni. Molestiae, deleniti consequatur.</p>
         <div>
             <div class="clearfix">
-                <div class="price pull-left">Rp10000</div>
+                <div class="price pull-left">$10000</div>
                 <a href="#" class="btn btn-success pull-right" role="button">Button</a>
             </div>
         </div>
@@ -75,7 +80,7 @@
         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam recusandae sapiente consectetur placeat quia neque, eligendi voluptatem eos culpa impedit quidem nam iusto et inventore omnis magni. Molestiae, deleniti consequatur.</p>
         <div>
             <div class="clearfix">
-                <div class="price pull-left">Rp10000</div>
+                <div class="price pull-left">$10000</div>
                 <a href="#" class="btn btn-success pull-right" role="button">Button</a>
             </div>
         </div>
@@ -90,7 +95,7 @@
         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam recusandae sapiente consectetur placeat quia neque, eligendi voluptatem eos culpa impedit quidem nam iusto et inventore omnis magni. Molestiae, deleniti consequatur.</p>
         <div>
             <div class="clearfix">
-                <div class="price pull-left">Rp10000</div>
+                <div class="price pull-left">$10000</div>
                 <a href="#" class="btn btn-success pull-right" role="button">Button</a>
             </div>
         </div>
@@ -105,7 +110,7 @@
         <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam recusandae sapiente consectetur placeat quia neque, eligendi voluptatem eos culpa impedit quidem nam iusto et inventore omnis magni. Molestiae, deleniti consequatur.</p>
         <div>
             <div class="clearfix">
-                <div class="price pull-left">Rp10000</div>
+                <div class="price pull-left">$10000</div>
                 <a href="#" class="btn btn-success pull-right" role="button">Button</a>
             </div>
         </div>
