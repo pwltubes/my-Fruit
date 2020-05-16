@@ -1,28 +1,55 @@
-var Products = require('../models/products');
+var Product = require('../models/product');
+
+var mongoose = require('mongoose');
+
+// mongoose.connect('localhost:27017/shopping');
+
+mongoose.connect('mongodb+srv://m220student:m220password@mflix-mu2ld.mongodb.net/test?retryWrites=true&w=majority',{useNewUrlParser: true});
+
 
 var products = [
-    new Products({
-        imagePath: 'https://cdn1-production-images-kly.akamaized.net/JKk9tqvC1b2hZmB_z68iWYDaX3s=/640x360/smart/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2978823/original/023121200_1574827306-Pisang_ambon.jpg',
-        title: 'Pisang Ambon',
-        description: 'Pisang dari kebun orang, di ambil dengan sangat hati-hati dengan lirik kanan kiri',
-        price: 8000
+    new Product({
+        imagePath: 'https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png',
+        title: 'Gothic Video Game',
+        description: 'Awesome Game!!!!',
+        price: 10
     }),
-    new Products({
-        imagePath: 'https://media.suara.com/pictures/653x366/2019/06/25/68123-ilustrasi-jambu-kristal-pixabaynew-abdul17.jpg',
-        title: 'Jambu kristal',
-        description: 'Dagangannya kang aceng, nitip dia sama web ini, katanya sih manis',
-        price: 20000
+    new Product({
+        imagePath: 'http://eu.blizzard.com/static/_images/games/wow/wallpapers/wall2/wall2-1440x900.jpg',
+        title: 'World of Warcraft Video Game',
+        description: 'Also awesome? But of course it was better in vanilla ...',
+        price: 20
     }),
-    new Products({
-        imagePath: 'https://img2.ralali.id/mediaflex/280/assets/img/Libraries/332089_DESTRA-AGRO-Bayam-Hijau-1-Kg_BBLUB1qpy5p0lJD0_1583237162.jpeg',
-        title: 'Bayam',
-        description: 'Bayam hijau biar anaknya jadi popeye',
-        price: 5000
+    new Product({
+        imagePath: 'https://support.activision.com/servlet/servlet.FileDownload?file=00PU000000Rq6tz',
+        title: 'Call of Duty Video Game',
+        description: 'Meh ... nah, it\'s okay I guess',
+        price: 40
     }),
-    new Products({
-        imagePath: 'https://m.ayobandung.com/images-bandung/post/articles/2019/10/14/66788/cat-baby-4208534_960_720.jpg',
-        title: 'anak kucing',
-        description: 'Lah dari mana ini masuknya',
-        price: 0
+    new Product({
+        imagePath: 'https://pmcdeadline2.files.wordpress.com/2014/02/minecraft__140227211000.jpg',
+        title: 'Minecraft Video Game',
+        description: 'Now that is super awesome!',
+        price: 15
     }),
+    new Product({
+        imagePath: 'https://d1r7xvmnymv7kg.cloudfront.net/sites_products/darksouls3/assets/img/DARKSOUL_facebook_mini.jpg',
+        title: 'Dark Souls 3 Video Game',
+        description: 'I died!',
+        price: 50
+    })
 ];
+
+var done = 0;
+for (var i = 0; i < products.length; i++) {
+    products[i].save(function(err, result) {
+        done++;
+        if (done === products.length) {
+            exit();
+        }
+    });
+}
+
+function exit() {
+    mongoose.disconnect();
+}

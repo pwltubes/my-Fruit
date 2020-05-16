@@ -14,7 +14,7 @@ var routes = require('./routes/index');
 
 var app = express();
 
-mongoose.connect('localhost : 27017/shopping');
+
 
 // view engine setup
 app.engine('.hbs', expressHbs({
@@ -40,10 +40,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404
-  next(err);
+
 });
 
 // error handler
