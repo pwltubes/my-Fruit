@@ -1,23 +1,21 @@
 {
-  "name": "coba",
+  "name": "my-fruit",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "body-parse": "^0.1.0",
-    "bootstrap": "^4.4.1",
     "cookie-parser": "~1.4.4",
+    "csurf": "^1.11.0",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "express-handlebars": "^4.0.4",
-    "hbs": "^4.1.1",
+    "express-session": "^1.17.1",
+    "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
     "mongodb": "^3.5.7",
     "mongoose": "^5.9.13",
-    "morgan": "~1.9.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "morgan": "~1.9.1"
   }
 }
