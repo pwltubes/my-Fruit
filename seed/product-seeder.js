@@ -3,8 +3,9 @@ var Product = require('../models/product');
 var mongoose = require('mongoose');
 
 // mongoose.connect('localhost:27017/shopping');
+mongoose.connect('mongodb://localhost:27017/shopping', { useNewUrlParser: true, useUnifiedTopology: true });
 
-mongoose.connect('mongodb+srv://m220student:m220password@mflix-mu2ld.mongodb.net/test?retryWrites=true&w=majority',{useNewUrlParser: true});
+// mongoose.connect('mongodb+srv://m220student:m220password@mflix-mu2ld.mongodb.net/test?retryWrites=true&w=majority',{useNewUrlParser: true});
 
 
 var products = [
@@ -42,7 +43,7 @@ var products = [
 
 var done = 0;
 for (var i = 0; i < products.length; i++) {
-    products[i].save(function(err, result) {
+    products[i].save(function (err, result) {
         done++;
         if (done === products.length) {
             exit();
