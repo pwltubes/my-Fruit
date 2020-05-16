@@ -3,20 +3,18 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var expressHbs = require('express-handlebars');
-var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
-var buahRouter = require('./routes/buah');
 var usersRouter = require('./routes/users');
-var pembayaranRouter = require('./routes/pembayaran');
+var expressHbs = require('express-handlebars');
+var mongoose = require('mongoose')
+var session = require('express-session')
 
+var routes = require('./routes/index');
 
 var app = express();
 
-mongoose.connect('mongodb://localhost:27017/shopping', { useNewUrlParser: true, useUnifiedTopology: true });
-// mongoose.connect('localhost:27017/shopping');
-// mongoose.connect('localhost:17017/shopping');
+
 
 // view engine setup
 app.engine('.hbs', expressHbs({
@@ -27,19 +25,22 @@ app.set('view engine', '.hbs');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({
+  extended: false
+}));
 app.use(cookieParser());
+app.use(session({
+  secret: 'mysupersecret',
+  resave: false,
+  saveUninitialized: false
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/buah', buahRouter);
 app.use('/users', usersRouter);
-app.use('/pembayaran', pembayaranRouter);
-
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  next(createError(404));
+
 });
 
 // error handler

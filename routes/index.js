@@ -1,12 +1,20 @@
 var express = require('express');
 var router = express.Router();
+
 var Cart = require('../models/cart');
 
 var Product = require('../models/product');
 var Order = require('../models/order');
+=
 
+var csrf = require('csurf');
+
+
+var csrfProtection = csrf();
+router.use(csrfProtection);
 /* GET home page. */
 router.get('/', function (req, res, next) {
+
   var successMsg = req.flash('success')[0];
   Product.find(function (err, docs) {
     var productChunks = [];
@@ -99,16 +107,24 @@ router.post('/checkout', isLoggedIn, function (req, res, next) {
       req.flash('success', 'Successfully bought product!');
       req.session.cart = null;
       res.redirect('/');
+
+  Product.find(function (err, docs) {
+    var productChunks = [];
+    var chunkSize = 3;
+    for (var i = 0; i < docs.length; i += chunkSize);
+    res.render('shop/index', {
+      title: 'MY FRUIT',
+      products: productChunks
+
     });
   });
 });
+router.get('/user/signup', function (req, res, next) {
+  res.render('user/signup', {
+    csrfToken: req.csrfToken()
+  });
+})
+
 
 module.exports = router;
 
-function isLoggedIn(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  req.session.oldUrl = req.url;
-  res.redirect('/user/signin');
-}
